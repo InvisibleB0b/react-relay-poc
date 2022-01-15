@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import graphql from 'babel-plugin-relay/macro';
+import {
+  loadQuery,
+  usePreloadedQuery,
+  useFragment
+} from 'react-relay/hooks';
+import useLazyLoadQuery from 'react-relay/lib/relay-hooks/useLazyLoadQuery';
+import Drivers from './Components/Drivers';
+
+const RacesQuery = graphql`
+query AppRacesQuery {
+  races{
+    series
+    season
+    round
+    url
+    raceName
+    date
+    results{
+      ...DriversResultsFragment
+    }
+  }
+}`;
 
 function App() {
+  const data = useLazyLoadQuery(RacesQuery);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='row'>
+      {data?.races?.map((r, i) => {
+        return (
+          <div className='card col-4' key={i}>
+            <div className='card-body'>
+              <h5 className='card-title'>
+                <span className='p-2'>
+                  {r.series}
+                </span>
+                <span className='p-2'>
+                  {r.season}
+                </span>
+                <span className='p-2'>
+                  {r.round}
+                </span>
+              </h5>
+              {r.raceName}
+            </div>
+            <ul className='row'>
+              {r?.results?.map(res => <Drivers result={res} />)}
+            </ul>
+          </div>
+        )
+      })}
     </div>
   );
 }
