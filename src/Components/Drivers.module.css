@@ -1,0 +1,11 @@
+.list{
+    list-style: none;
+}
+.list h5{
+    display: inline-block;
+}
+
+.list p{
+    padding: 2px;
+    display: inline-block;
+}

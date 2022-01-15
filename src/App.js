@@ -34,18 +34,18 @@ function App() {
             <div className='card-body'>
               <h5 className='card-title'>
                 <span className='p-2'>
-                  {r.series}
+                  Series: {r.series}
                 </span>
                 <span className='p-2'>
-                  {r.season}
+                  Season: {r.season}
                 </span>
                 <span className='p-2'>
-                  {r.round}
+                  Round: {r.round}
                 </span>
               </h5>
-              {r.raceName}
+              <h5>Race: {r.raceName}</h5>
             </div>
-            <ul className='row'>
+            <ul className='row '>
               {r?.results?.map(res => <Drivers result={res} />)}
             </ul>
           </div>
