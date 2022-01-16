@@ -23,16 +23,18 @@ export const Drivers = (props) => {
     const data = useFragment(DriversResultFragment, props.result);
 
     return (
-        <li className={`${styles.list} col-4`}>
-            <h5>
-                {data.position}
-            </h5>
-            <p>
-                {data.driver.givenName}
-            </p>
-            <p>
-                {data.driver.familyName}
-            </p>
+        <li className={`${styles.list} col-4 card`}>
+            <div className='card-body'>
+                <h5 className='card-title'>
+                    {data.position}
+                </h5>
+                <p className='card-text'>
+                    {data.driver.givenName}
+                </p>
+                <p className='card-text'>
+                    {data.driver.familyName}
+                </p>
+            </div>
         </li>
     )
 
