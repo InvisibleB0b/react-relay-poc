@@ -3,9 +3,9 @@ import graphql from 'babel-plugin-relay/macro';
 import {
   loadQuery,
   usePreloadedQuery,
-  useFragment
+  useFragment,
+  useLazyLoadQuery
 } from 'react-relay/hooks';
-import useLazyLoadQuery from 'react-relay/lib/relay-hooks/useLazyLoadQuery';
 import Drivers from './Components/Drivers';
 
 const RacesQuery = graphql`
