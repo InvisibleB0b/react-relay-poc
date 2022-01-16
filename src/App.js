@@ -43,7 +43,7 @@ function App() {
                   Round: {r.round}
                 </span>
               </h5>
-              <h5>Race: {r.raceName}</h5>
+              <h5 className='card-subtitle'>Race: {r.raceName}</h5>
             </div>
             <ul className='row '>
               {r?.results?.map(res => <Drivers result={res} />)}
