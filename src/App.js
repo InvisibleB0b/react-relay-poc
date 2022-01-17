@@ -6,11 +6,13 @@ import {
   useFragment,
   useLazyLoadQuery
 } from 'react-relay/hooks';
-import Drivers from './Components/Drivers';
+import Drivers from './Components/Drivers/Drivers';
+import { Route, Routes } from 'react-router-dom'
+import Yearselector from './Pages/YearSelector.js';
 
 const RacesQuery = graphql`
-query AppRacesQuery {
-  races{
+query AppRacesQuery($series: String!, $season: String) {
+  specificRace(series: $series, season: $season){
     series
     season
     round
@@ -24,11 +26,12 @@ query AppRacesQuery {
 }`;
 
 function App() {
-  const data = useLazyLoadQuery(RacesQuery);
+  //const data = useLazyLoadQuery(RacesQuery, { series: "f1", season: "2020" });
+
 
   return (
-    <div className='row'>
-      {data?.races?.map((r, i) => {
+    <div>
+      {/* {data?.specificRace?.map((r, i) => {
         return (
           <div className='card col-4' key={i}>
             <div className='card-body'>
@@ -50,7 +53,12 @@ function App() {
             </ul>
           </div>
         )
-      })}
+      })} */}
+      <Routes>
+        <Route exact path="/" element={<Yearselector />} />
+        <Route path=":season" element={<Yearselector />} />
+      </Routes>
+
     </div>
   );
 }
