@@ -1,11 +1,9 @@
-import { useRef, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
-// import Styles from './Yearselector.module.css'
+import { Link } from 'react-router-dom';
 
 const supportedStartYear = 1950;
 const supportedEndYear = 2021;
 
-export const Yearselector = (props) => {
+export const Yearselector = () => {
 
     let supportedYears = [];
 
@@ -13,23 +11,24 @@ export const Yearselector = (props) => {
         supportedYears.push(`${index}`);
     }
 
-    const season = useParams();
-
-    //REMOVE:
-    console.log('props', props, season);
-
-
     return (
-        <div className="container-fluid">
-            <div className='row'>
-                <input id="slider1" type="range" min={supportedStartYear} max={supportedEndYear} step="1" />
+        <div className="container">
+
+            <div className='row mt-4'>
+                <div className='col-12'>
+                    <h1>Select a year you wish to see races from</h1>
+                </div>
                 {supportedYears.map((year, i) => {
                     return (
-                        <p className='col-2' key={i}>
-                            <Link to={`/${year}`}>
-                                {year}
-                            </Link>
-                        </p>
+                        <div key={i} className='col-2 mb-1 p-1'>
+                            <div className='card pt-2 pb-2'>
+                                <p className='text-center' >
+                                    <Link to={`/${year}`}>
+                                        {year}
+                                    </Link>
+                                </p>
+                            </div>
+                        </div>
                     )
                 })}
             </div>
