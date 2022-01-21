@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<6d938e8082d6c9b629ed28a95d4756ae>>
+ * @generated SignedSource<<0cd47ec25afcc7f1c21ec9a8565baf62>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -274,6 +274,63 @@ return {
           {
             "alias": null,
             "args": null,
+            "concreteType": "Circuit",
+            "kind": "LinkedField",
+            "name": "circuit",
+            "plural": false,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "kind": "ScalarField",
+                "name": "circuitName",
+                "storageKey": null
+              },
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "Location",
+                "kind": "LinkedField",
+                "name": "location",
+                "plural": false,
+                "selections": [
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "long",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "lat",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "locality",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "country",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
             "kind": "ScalarField",
             "name": "id",
             "storageKey": null
@@ -284,12 +341,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "17f38b7a8232a52d440a2d82ef21dde2",
+    "cacheID": "a1df2c2e13200427d4961facbfc61231",
     "id": null,
     "metadata": {},
     "name": "SpecificRaceOverViewQuery",
     "operationKind": "query",
-    "text": "query SpecificRaceOverViewQuery(\n  $series: String!\n  $season: String\n  $round: String\n) {\n  specificRace(series: $series, season: $season, round: $round) {\n    ...SpecificRaceFragment\n    id\n  }\n}\n\nfragment DriversFragment on Result {\n  position\n  number\n  driver {\n    dateOfBirth\n    nationality\n  }\n  time {\n    time\n    millis\n  }\n}\n\nfragment ResultsFragment on Race {\n  results {\n    position\n    number\n    grid\n    laps\n    status\n    driver {\n      givenName\n      familyName\n      code\n    }\n    ...DriversFragment\n  }\n}\n\nfragment SpecificRaceFragment on Race {\n  series\n  season\n  round\n  raceName\n  date\n  url\n  ...ResultsFragment\n}\n"
+    "text": "query SpecificRaceOverViewQuery(\n  $series: String!\n  $season: String\n  $round: String\n) {\n  specificRace(series: $series, season: $season, round: $round) {\n    ...SpecificRaceFragment\n    id\n  }\n}\n\nfragment CircuitFragment on Race {\n  circuit {\n    circuitName\n    location {\n      long\n      lat\n      locality\n      country\n    }\n  }\n}\n\nfragment DriversFragment on Result {\n  position\n  number\n  driver {\n    dateOfBirth\n    nationality\n  }\n  time {\n    time\n    millis\n  }\n}\n\nfragment ResultsFragment on Race {\n  results {\n    position\n    number\n    grid\n    laps\n    status\n    driver {\n      givenName\n      familyName\n      code\n    }\n    ...DriversFragment\n  }\n}\n\nfragment SpecificRaceFragment on Race {\n  series\n  season\n  round\n  raceName\n  date\n  url\n  ...ResultsFragment\n  ...CircuitFragment\n}\n"
   }
 };
 })();

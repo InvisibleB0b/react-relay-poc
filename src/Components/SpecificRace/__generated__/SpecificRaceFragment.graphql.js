@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<0348b0b62cb1c5da893797645ac81ba2>>
+ * @generated SignedSource<<a0e1b0acf544e732a8573baf223b8f0f>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -11,6 +11,7 @@
 
 /*::
 import type { Fragment, ReaderFragment } from 'relay-runtime';
+type CircuitFragment$fragmentType = any;
 type ResultsFragment$fragmentType = any;
 import type { FragmentType } from "relay-runtime";
 declare export opaque type SpecificRaceFragment$fragmentType: FragmentType;
@@ -22,7 +23,7 @@ export type SpecificRaceFragment$data = {|
   +raceName: string,
   +date: string,
   +url: string,
-  +$fragmentSpreads: ResultsFragment$fragmentType,
+  +$fragmentSpreads: ResultsFragment$fragmentType & CircuitFragment$fragmentType,
   +$fragmentType: SpecificRaceFragment$fragmentType,
 |};
 export type SpecificRaceFragment = SpecificRaceFragment$data;
@@ -85,13 +86,18 @@ var node/*: ReaderFragment*/ = {
       "args": null,
       "kind": "FragmentSpread",
       "name": "ResultsFragment"
+    },
+    {
+      "args": null,
+      "kind": "FragmentSpread",
+      "name": "CircuitFragment"
     }
   ],
   "type": "Race",
   "abstractKey": null
 };
 
-(node/*: any*/).hash = "250ca77af35e17766f2124d1e8ae6f7f";
+(node/*: any*/).hash = "2c2f8ae4f7a7e9addd270e09b767a353";
 
 module.exports = ((node/*: any*/)/*: Fragment<
   SpecificRaceFragment$fragmentType,

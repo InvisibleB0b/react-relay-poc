@@ -4,6 +4,7 @@ import styles from './SpecificRace.module.css'
 import graphql from 'babel-plugin-relay/macro';
 import { useFragment } from 'react-relay/hooks';
 import Results from '../Results/Results';
+import Circuit from '../Circuit/Circuit';
 
 const SpecificRaceFragment = graphql`
 fragment SpecificRaceFragment on Race{
@@ -14,6 +15,7 @@ fragment SpecificRaceFragment on Race{
     date
     url
   ...ResultsFragment
+  ...CircuitFragment
 }
 `;
 
@@ -47,7 +49,7 @@ export const SpecificRace = (props) => {
                         </div>
                         <div className='col-6'>
                             <div className='row'>
-
+                                <Circuit circuit={data} />
                             </div>
                         </div>
                     </div>
