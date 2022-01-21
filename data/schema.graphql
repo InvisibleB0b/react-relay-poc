@@ -68,33 +68,33 @@ type Query {
 type Race implements Node {
   id: ID!
   results: [Result!]!
-  series: String!
-  season: String!
-  round: String!
-  url: String!
-  raceName: String!
-  circuit: Circuit!
-  date: String!
+  series: String
+  season: String
+  round: String
+  url: String
+  raceName: String
+  circuit: Circuit
+  date: String
 }
 
 type Result {
-  number: String!
-  position: String!
-  positionText: String!
-  points: String!
+  number: String
+  position: String
+  positionText: String
+  points: String
   driver: Driver
-  grid: String!
-  laps: String!
-  status: String!
+  grid: String
+  laps: String
+  status: String
   time: Time
   fastestLap: FastestLap
 }
 
 type Circuit {
-  circuitId: String!
-  url: String!
-  circuitName: String!
-  location: Location!
+  circuitId: String
+  url: String
+  circuitName: String
+  location: Location
 }
 
 type FastestLap {
@@ -110,14 +110,14 @@ type Time {
 }
 
 type Driver {
-  driverId: String!
-  permanentNumber: String!
-  code: String!
-  url: String!
-  givenName: String!
-  familyName: String!
-  dateOfBirth: String!
-  nationality: String!
+  driverId: String
+  permanentNumber: String
+  code: String
+  url: String
+  givenName: String
+  familyName: String
+  dateOfBirth: String
+  nationality: String
 }
 
 type Book {
@@ -126,10 +126,10 @@ type Book {
 }
 
 type Location {
-  lat: String!
-  long: String!
-  locality: String!
-  country: String!
+  lat: String
+  long: String
+  locality: String
+  country: String
 }
 
 type Author {

@@ -2,12 +2,14 @@ import { Route, Routes } from 'react-router-dom'
 import Yearselector from './Pages/YearSelector.js';
 import RaceSelector from './Pages/RaceSelector.js';
 import SpecificRaceOverView from './Pages/SpecificRaceOverView.js';
+import { Suspense } from 'react';
 
 
 
 function App() {
   return (
-    <div>
+
+    <Suspense fallback={"loading..."}>
 
       <Routes>
         <Route exact path="/" element={<Yearselector />} />
@@ -15,7 +17,7 @@ function App() {
         <Route exact path=":season/:round" element={<SpecificRaceOverView />} />
       </Routes>
 
-    </div>
+    </Suspense>
   );
 }
 

@@ -1,5 +1,4 @@
-import { useRef, useEffect, useContext } from 'react';
-import styles from './Circuit.module.css'
+// import styles from './Circuit.module.css'
 
 
 //graphql specifics

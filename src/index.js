@@ -10,17 +10,14 @@ import {
   RelayEnvironmentProvider
 } from 'react-relay/hooks';
 import RelayEnvironment from './RelayEnviroment';
-const { Suspense } = React;
 
 
 ReactDOM.render(
   <React.StrictMode>
     <RelayEnvironmentProvider environment={RelayEnvironment}>
-      <Suspense fallback={'Loading...'}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Suspense>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </RelayEnvironmentProvider>
   </React.StrictMode>,
   document.getElementById('root')

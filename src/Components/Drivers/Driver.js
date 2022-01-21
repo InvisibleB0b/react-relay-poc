@@ -1,6 +1,6 @@
 import graphql from 'babel-plugin-relay/macro';
 import { useFragment } from 'react-relay';
-import styles from './Driver.module.css';
+// import styles from './Driver.module.css';
 
 
 const DriverFragment = graphql`
