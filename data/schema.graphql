@@ -86,8 +86,8 @@ type Result {
   grid: String!
   laps: String!
   status: String!
-  time: Time!
-  fastestLap: FastestLap!
+  time: Time
+  fastestLap: FastestLap
 }
 
 type Circuit {

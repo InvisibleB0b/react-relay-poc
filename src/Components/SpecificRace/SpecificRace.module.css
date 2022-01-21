@@ -1,0 +1,6 @@
+.alignMiddle{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
