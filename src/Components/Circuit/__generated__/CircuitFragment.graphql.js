@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e7f74cfb7808a71ce2dbcea95848277c>>
+ * @generated SignedSource<<b70f93e9f59f887f7c20a554ce36e828>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -15,13 +15,13 @@ import type { FragmentType } from "relay-runtime";
 declare export opaque type CircuitFragment$fragmentType: FragmentType;
 export type CircuitFragment$ref = CircuitFragment$fragmentType;
 export type CircuitFragment$data = {|
-  +circuit: {|
-    +circuitName: string,
-    +location: {|
-      +long: string,
-      +lat: string,
-      +locality: string,
-      +country: string,
+  +circuit: ?{|
+    +circuitName: ?string,
+    +location: ?{|
+      +long: ?string,
+      +lat: ?string,
+      +locality: ?string,
+      +country: ?string,
     |},
   |},
   +$fragmentType: CircuitFragment$fragmentType,

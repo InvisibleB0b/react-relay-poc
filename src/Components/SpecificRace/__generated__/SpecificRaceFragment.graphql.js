@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<a0e1b0acf544e732a8573baf223b8f0f>>
+ * @generated SignedSource<<cb4021fa93479c0ba57779f7acdb3437>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -17,12 +17,12 @@ import type { FragmentType } from "relay-runtime";
 declare export opaque type SpecificRaceFragment$fragmentType: FragmentType;
 export type SpecificRaceFragment$ref = SpecificRaceFragment$fragmentType;
 export type SpecificRaceFragment$data = {|
-  +series: string,
-  +season: string,
-  +round: string,
-  +raceName: string,
-  +date: string,
-  +url: string,
+  +series: ?string,
+  +season: ?string,
+  +round: ?string,
+  +raceName: ?string,
+  +date: ?string,
+  +url: ?string,
   +$fragmentSpreads: ResultsFragment$fragmentType & CircuitFragment$fragmentType,
   +$fragmentType: SpecificRaceFragment$fragmentType,
 |};

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
-const supportedStartYear = 1950;
+const supportedStartYear = 2000;
 const supportedEndYear = 2021;
+
 
 export const Yearselector = () => {
 

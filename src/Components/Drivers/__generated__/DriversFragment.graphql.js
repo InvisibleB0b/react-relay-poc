@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<5af4b6d7ad4600431cdf70f8b84a6e16>>
+ * @generated SignedSource<<44c77de50f74388c1d1bb2355992678b>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -15,11 +15,11 @@ import type { FragmentType } from "relay-runtime";
 declare export opaque type DriversFragment$fragmentType: FragmentType;
 export type DriversFragment$ref = DriversFragment$fragmentType;
 export type DriversFragment$data = {|
-  +position: string,
-  +number: string,
+  +position: ?string,
+  +number: ?string,
   +driver: ?{|
-    +dateOfBirth: string,
-    +nationality: string,
+    +dateOfBirth: ?string,
+    +nationality: ?string,
   |},
   +time: ?{|
     +time: string,

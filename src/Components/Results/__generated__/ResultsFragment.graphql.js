@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<40d846824aed9277fc4f8112d1b89687>>
+ * @generated SignedSource<<1dfc38aaf4b3409f185ea91e24dc4965>>
  * @flow
  * @lightSyntaxTransform
  * @nogrep
@@ -17,15 +17,15 @@ declare export opaque type ResultsFragment$fragmentType: FragmentType;
 export type ResultsFragment$ref = ResultsFragment$fragmentType;
 export type ResultsFragment$data = {|
   +results: $ReadOnlyArray<{|
-    +position: string,
-    +number: string,
-    +grid: string,
-    +laps: string,
-    +status: string,
+    +position: ?string,
+    +number: ?string,
+    +grid: ?string,
+    +laps: ?string,
+    +status: ?string,
     +driver: ?{|
-      +givenName: string,
-      +familyName: string,
-      +code: string,
+      +givenName: ?string,
+      +familyName: ?string,
+      +code: ?string,
     |},
     +$fragmentSpreads: DriversFragment$fragmentType,
   |}>,
