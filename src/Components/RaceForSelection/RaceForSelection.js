@@ -22,8 +22,8 @@ export const RaceForSelection = (props) => {
 
     return (
         <div className="col-3 mb-2">
-            <div className={`card ${styles.card}`} onClick={(e) => { e.preventDefault(); selectRace(); }}>
-                <div className='card-header'>
+            <div className={`h-100 card ${styles.card}`} onClick={(e) => { e.preventDefault(); selectRace(); }}>
+                <div className='h-100 card-header'>
                     <h2>
                         Round:  {data?.round}
                     </h2>
